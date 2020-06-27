@@ -65,4 +65,4 @@ This program is the embodiment of perfection. So no bugs.
 ## Credit
 *Esteban De La Hoz* - [Github](https://github.com/Esteban18911) || [Twitter](https://twitter.com/Esteban18911)
 
-*Eduardo Vega* - [Github](https://github.com/EduardoVega04 || [Twitter](https://twitter.com/eduardo_vega04)
+*Eduardo Vega* - [Github](https://github.com/EduardoVega04) || [Twitter](https://twitter.com/eduardo_vega04)

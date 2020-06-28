@@ -8,12 +8,16 @@ from datetime import datetime
 class BaseModel():
   """The main class"""
 
-  def __init__(self):    
+  def __init__(self): 
+    """Constructor of the instance"""   
     self.id = str(uuid.uuid4())
     self.created_at = datetime.now()
     self.updated_at = datetime.now()
   
   def __str__(self):
+    """Return an user friendly representation
+    of the isinstance
+    """
     return ("[{}] ({}) {}]".format(self.__class__.__name__, self.id, self.__dict__))
 
   def save(self):

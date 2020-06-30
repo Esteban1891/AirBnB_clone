@@ -5,11 +5,12 @@ import cmd
 import sys
 
 
+
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     def do_quit(self, args):
-        """Quit command to exit the program\n"""
+        """<Quit> Command To Exit The Program\n"""
         raise SystemExit
 
     def do_EOF(self, args):
@@ -20,8 +21,10 @@ class HBNBCommand(cmd.Cmd):
         """help"""
         cmd.Cmd.do_help(self, args)
 
-    def emptyline(self, args):
-        """empty lines"""
+    def emptyline(self):
+        '''dont execute anything when user
+           press enter an empty line
+        '''
         pass
 
 

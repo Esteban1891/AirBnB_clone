@@ -20,7 +20,7 @@ class HBNBCommand(cmd.Cmd):
         """help"""
         cmd.Cmd.do_help(self, args)
 
-    def emptyline(self, args):
+    def emptyline(self):
         '''dont execute anything when user
            press enter an empty line
         '''

@@ -7,17 +7,17 @@ from datetime import datetime
 
 class BaseModel():
     """The main class"""
-
     def __init__(self, *args, **kwargs):
-        """Constructor of the instance"""
-        if kwargs is True:
-            for key in kwargs.keys():
+        """Constructor of the instance. Uses kwargs if not empty"""
+        if kwargs:
+            for key, value in kwargs.items():
                 if key == "__class__":
                     continue
+                elif key == "created_at" or key == "updated_at":
+                    time = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                    setattr(self, key, time)
                 else:
-                    if key == "created_at" or key == "updated_at":
-                        datetime.strptime(kwargs[key], "%Y-%m-%dT%H:%M:%S.%f")
-                    setattr(self, key, kwargs[key])
+                    setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()

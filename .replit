@@ -1,2 +1,0 @@
-language = "python3"
-run = "./test_base_model_dict.py"

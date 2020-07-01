@@ -1,48 +1,73 @@
 #!/usr/bin/python3
-"""Our BaseModel that defines all common attributes/methods for other classes
-"""
+"""base_model.py module"""
 import uuid
 from datetime import datetime
-from models import storage
+import models
 
 
 class BaseModel():
-    """The main class"""
+    """
+    BaseModel class:
+    ----------------
+    It defines all common attributes/methods
+    for the other classes.
+    """
+
     def __init__(self, *args, **kwargs):
-        """Constructor of the instance. Uses kwargs if not empty"""
+        """
+        Object constructor.
+        Attributes:
+        ----------
+        id [str] -- UUID generated with python uuid.
+        created_at [datetime] -- contains datetime obj.
+        updated_at [datetime] -- contains datetime obj.
+        __class__ [str] -- BaseModel class.
+        """
         if kwargs:
             for key, value in kwargs.items():
-                if key == "__class__":
-                    continue
-                elif key == "created_at" or key == "updated_at":
-                    time = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
-                    setattr(self, key, time)
+                if key == "created_at":
+                    self.created_at = datetime.strptime(value,
+                                                        '%Y-%m-%dT%H:%M:%S.%f')
+                elif key == "updated_at":
+                    self.updated_at = datetime.strptime(value,
+                                                        '%Y-%m-%dT%H:%M:%S.%f')
                 else:
-                    setattr(self, key, value)
+                    if key != "__class__":
+                        setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            storage.new(self)
+
+            # calling method new(self) on storage (task5).
+            models.storage.new(self)
 
     def __str__(self):
-        """Return an user friendly representation
-           of the isinstance
-        """
-        return ("[{}] ({}) {}]".format(self.__class__.__name__,
-                                       self.id, self.__dict__))
+        """str representation of the base class."""
+        msg = ("[{}] ({}) {}".format(self.__class__.__name__,
+               self.id, self.__dict__))
+        return msg
 
     def save(self):
-        """Updates the public instance attribute
-        updated_at with the current date and time"""
+        """
+        This method updates the instance attribute
+        'self.udated_at'.
+        """
         self.updated_at = datetime.now()
-        storage.save()
+
+        # calling save(self) method of storage (task5).
+        models.storage.save()
 
     def to_dict(self):
-        """Returns a dictionary containing
-        all the __dict__ keys / values of the instance"""
-        my_dict = self.__dict__
-        my_dict.update({"__class__": self.__class__.__name__})
-        self.created_at = datetime.now().isoformat()
-        self.updated_at = datetime.now().isoformat()
-        return (my_dict)
+        """
+        This method creates a new dictionary:
+        -------------------------------------
+        Key: {created_at} -- was converted to string isoformat().
+        Key: {updated_at} -- was converted to string isoformat().
+        Key: {__class__}  -- was added, it contains the class name.
+        """
+        new_dict = dict(self.__dict__)
+        new_dict["created_at"] = self.created_at.isoformat()
+        new_dict["updated_at"] = self.updated_at.isoformat()
+        new_dict["__class__"] = self.__class__.__name__
+        return (new_dict)

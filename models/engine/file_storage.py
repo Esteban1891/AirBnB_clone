@@ -32,7 +32,8 @@ class FileStorage:
             json.dump(my_dict, myfile)
 
     def reload(self):
-        """Deserializes the JSON file to __objects (only if the JSON file (__file_path)
+        """Deserializes the JSON file to __objects
+         (only if the JSON file (__file_path)
         exists, otherwise, do nothing. The file contains a dictionary
         in the form key:dict and we need a dictionary in the form key:object"""
         try:

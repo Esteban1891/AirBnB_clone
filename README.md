@@ -33,7 +33,7 @@ Creation and testing-
 | tests/test_models/engine| TestFileStorage | Unittests to test File storage class                                       |
 
 ## Installation
-This repository can be clones using the git provided url:\
+This repository can be cloned using the git provided url:\
 ``` $ git clone https://github.com/Esteban1891/AirBnB_clone.git ```\
 
 ## Console
@@ -60,7 +60,7 @@ The code can be tested using unittest in the tests directory by using the follow
 ```AirBnB_clone$ python3 -m unittest discover tests```
 
 ## Bugs
-This program is the embodiment of perfection. So no bugs.
+No bugs found.
 
 ## Credit
 *Esteban De La Hoz* - [Github](https://github.com/Esteban18911) || [Twitter](https://twitter.com/Esteban18911)

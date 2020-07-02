@@ -60,7 +60,7 @@ The code can be tested using unittest in the tests directory by using the follow
 ```AirBnB_clone$ python3 -m unittest discover tests```
 
 ## Bugs
-No bugs found.
+No bugs found for now
 
 ## Credit
 *Esteban De La Hoz* - [Github](https://github.com/Esteban18911) || [Twitter](https://twitter.com/Esteban18911)

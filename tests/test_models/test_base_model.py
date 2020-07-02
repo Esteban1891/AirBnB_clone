@@ -112,7 +112,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertNotEqual(inst1.id, inst2.id)
 
     def test_to_dict(self):
-        """Test conversion of object attributes to dictionary for json"""
+        """Test conversion of object attributes to dictionary for JSON"""
         my_model = BaseModel()
         my_model.name = "Holberton"
         my_model.my_number = 89

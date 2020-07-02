@@ -19,11 +19,11 @@ class HBNBCommand(cmd.Cmd):
     def do_help(self, args):
         """help"""
         cmd.Cmd.do_help(self, args)
-    
+
     def do_create(self, args):
         """Creates a new instance of Basemodel,
         saves it (to the JSON file) and prints the
-        id"""        
+        id"""
         if not args:
             print("** class name missing **")
         elif args != "BaseModel":

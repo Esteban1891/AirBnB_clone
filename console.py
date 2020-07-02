@@ -32,6 +32,22 @@ class HBNBCommand(cmd.Cmd):
             new_instance = BaseModel()
             models.storage.save()
             print(new_instance.id)
+    
+    def do_show(self, args):
+        """Prints the string representation of an instance
+        based on the class name and id"""
+        if not args:
+            print("** class name missing **")        
+        else:    
+            list_str = args.split()
+            if list_str[0] != "BaseModel":
+                print("** class doesn't exist **")
+            elif len(list_str) < 2:
+                print("** instance id missing **")
+            elif list_str[1] != eval(list_str[0] + "." + "id"):
+                print("** no instance found **")
+            else:
+                print("Something")
 
     def emptyline(self):
         '''dont execute anything when user

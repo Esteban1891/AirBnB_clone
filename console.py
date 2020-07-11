@@ -77,7 +77,8 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, args):
         """Prints all string representation of all instances
         based or not on the class name"""
-        if not args or args in HBNBCommand.allowed_obj:
+        list_str = args.split()
+        if not args or list_str[0] in HBNBCommand.allowed_obj:
             str_list = []
             objects = models.storage.all()
             for instance in objects.values():

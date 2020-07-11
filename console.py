@@ -10,7 +10,8 @@ from models.engine.file_storage import FileStorage
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
-    allowed_obj = ["BaseModel", "User"]
+    allowed_obj = {'BaseModel': BaseModel,
+                   'User': User}
 
     def do_quit(self, args):
         """Quit command to exit the program\n"""

@@ -109,6 +109,7 @@ class HBNBCommand(cmd.Cmd):
                 for value in objects.values():
                     try:
                         attr_type = type(getattr(value, list_str[2]))
+                        list_str[3] = list_str[3].replace('"', '')
                         list_str[3] = attr_type(list_str[3])
                     except AttributeError:
                         pass

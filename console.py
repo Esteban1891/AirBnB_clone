@@ -4,6 +4,11 @@
 import cmd
 import models
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from model.review import Review
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 
@@ -11,7 +16,13 @@ from models.engine.file_storage import FileStorage
 class HBNBCommand(cmd.Cmd):
     """Class for the command interpreter"""
     prompt = "(hbnb) "
-    allowed_obj = ["BaseModel", "User"]
+    allowed_obj = ["BaseModel",
+        "User",
+        "Amenity",
+        "City",
+        "Place",
+        "Review",
+        "State"]
 
     def do_quit(self, args):
         """Quit command to exit the program\n"""

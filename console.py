@@ -110,8 +110,8 @@ class HBNBCommand(cmd.Cmd):
                         list_str[3] = attr_type(list_str[3])
                     except AttributeError:
                         pass
-                setattr(value, list_str[2], list_str[3])
-                models.storage.save()
+                    setattr(value, list_str[2], list_str[3])
+                    models.storage.save()
             else:
                 print("** no instance found **")
 

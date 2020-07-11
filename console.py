@@ -31,7 +31,7 @@ class HBNBCommand(cmd.Cmd):
         id"""
         if not args:
             print("** class name missing **")
-        elif args not in HBNBCommand.allowed_obj:
+        elif args not in self.allowed_obj:
             print("** class doesn't exist **")
         else:
             new_instance = BaseModel()
@@ -44,7 +44,7 @@ class HBNBCommand(cmd.Cmd):
         list_str = args.split()
         if not list_str:
             print("** class name missing **")
-        elif args not in HBNBCommand.allowed_obj:
+        elif args not in self.allowed_obj:
             print("** class doesn't exist **")
         elif len(list_str) == 1:
             print("** instance id missing **")
@@ -62,7 +62,7 @@ class HBNBCommand(cmd.Cmd):
         list_str = args.split()
         if not list_str:
             print("** class name missing **")
-        elif args not in HBNBCommand.allowed_obj:
+        elif args not in self.allowed_obj:
             print("** class doesn't exist **")
         elif len(list_str) == 1:
             print("** instance id missing **")
@@ -93,7 +93,7 @@ class HBNBCommand(cmd.Cmd):
         list_str = args.split()
         if not list_str:
             print("** class name missing **")
-        if not args or args not in HBNBCommand.allowed_obj:
+        if not args or args not in self.allowed_obj:
             print("** class doesn't exist **")
         elif len(list_str) == 1:
             print("** instance id missing **")

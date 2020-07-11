@@ -34,7 +34,7 @@ class HBNBCommand(cmd.Cmd):
         elif args not in HBNBCommand.allowed_obj:
             print("** class doesn't exist **")
         else:
-            new_instance = BaseModel()
+            new_instance = eval(args + '()')
             models.storage.save()
             print(new_instance.id)
 

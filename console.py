@@ -17,12 +17,12 @@ class HBNBCommand(cmd.Cmd):
     """Class for the command interpreter"""
     prompt = "(hbnb) "
     allowed_obj = ["BaseModel",
-        "User",
-        "Amenity",
-        "City",
-        "Place",
-        "Review",
-        "State"]
+                   "User",
+                   "Amenity",
+                   "City",
+                   "Place",
+                   "Review",
+                   "State"]
 
     def do_quit(self, args):
         """Quit command to exit the program\n"""

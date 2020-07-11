@@ -9,6 +9,7 @@ from models.engine.file_storage import FileStorage
 
 
 class HBNBCommand(cmd.Cmd):
+    """Class for the command interpreter"""
     prompt = "(hbnb) "
     allowed_obj = ["BaseModel", "User"]
 

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""The command interpreter"""
+"""The command interpreter for the Back-End"""
 
 import cmd
 import models

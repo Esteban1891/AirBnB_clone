@@ -7,13 +7,16 @@ h3,
 h4,
 h5,
 h6,
+p,
 center,
+ul,
+li,
 table,
 caption,
 article,
-aside,
 footer,
-header {
+header,
+section {
     margin: 0;
     padding: 0;
     border: 0;
@@ -24,6 +27,11 @@ header {
 
 body {
     line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
 }
 
 body {

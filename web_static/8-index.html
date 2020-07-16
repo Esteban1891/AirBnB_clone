@@ -1,0 +1,108 @@
+<!-- HTML page that displays a header, footer, dropdown and detailed results -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AirBnB clone</title>
+        <meta charset="utf-8">
+        <link rel="icon" type="image/png" href="images/icon.png">
+        <link rel="stylesheet" href="styles/8-places.css">
+        <link rel="stylesheet" href="styles/6-filters.css">
+        <link rel="stylesheet" href="styles/4-common.css">
+        <link rel="stylesheet" href="styles/3-header.css">
+        <link rel="stylesheet" href="styles/3-footer.css">
+    </head>
+    <body>
+        <header></header>
+        <div class="container">
+            <section class="filters">
+                <div class="locations">
+                    <h3>States</h3>
+                    <h4>California, New York...</h4>
+                    <ul class="popover">
+                        <li class="init state_name"><h2>California:</h2></li>
+                        <li>San Francisco</li>
+                        <li>Los Angeles</li>
+                        <li>San Diego</li>
+                        <li class="state_name"><h2>New York:</h2></li>
+                        <li>Manhattan</li>
+                        <li>Brooklyn</li>
+                        <li>Da Bronx</li>
+                    </ul>
+                </div>
+                <div class="amenities">
+                    <h3>Amenities</h3>
+                    <h4>Bed, Shower, WiFi...</h4>
+                    <ul class="popover">
+                        <li>King Size Bed</li>
+                        <li>Hammock</li>
+                        <li>High Speed Internet</li>
+                        <li>Jacuzzi Bath</li>
+                    </ul>
+                </div>
+                <button>Search</button>
+            </section>
+            <section class="places">
+                <h1>Places</h1>
+                <div class="places_wrapper">
+                    <article>
+                        <h2>Treehouse</h2>
+                        <div class="price_by_night"><p>$99</p></div>
+                        <div class="information">
+                            <div class="max_guest"><p>2 Guests</p></div>
+                            <div class="number_rooms"><p>1 Bedroom</p></div>
+                            <div class="number_bathrooms"><p>1 Bathroom</p></div>
+                        </div>
+                            <div class="user">
+                                <p><strong>Owner</strong>: Noah Lennox</p>
+                            </div>
+                            <div class="description">
+                                <p>This house is built in a 800 year-old fern
+                                tree. It comes with a rope ladder and lamp in
+                                the main bedroom. Many people like this house
+                                because it provides a beautiful view of the
+                                cascades in the distance. It's a quiet and cozy
+                                abode; great for a honeymoon.</p>
+                            </div>
+                    </article>
+                    <article>
+                        <h2>Loft</h2>
+                        <div class="price_by_night"><p>$210</p></div>
+                        <div class="information">
+                            <div class="max_guest"><p>2 Guests</p></div>
+                            <div class="number_rooms"><p>1 Bedroom</p></div>
+                            <div class="number_bathrooms"><p>1.5 Bathrooms</p></div>
+                        </div>
+                            <div class="user">
+                                <p><strong>Owner</strong>: D'Angelo Thurston</p>
+                            </div>
+                            <div class="description">
+                                <p>This is a modern loft full of surprises.</p>
+                            </div>
+                    </article>
+                    <article>
+                        <h2>Log Cabin</h2>
+                        <div class="price_by_night"><p>$420</p></div>
+                        <div class="information">
+                            <div class="max_guest"><p>8 Guests</p></div>
+                            <div class="number_rooms"><p>5 Bedrooms</p></div>
+                            <div class="number_bathrooms"><p>4 Bathrooms</p></div>
+                        </div>
+                            <div class="user">
+                                <p><strong>Owner</strong>: Bill Cosby</p>
+                            </div>
+                            <div class="description">
+                                <p>The log cabin is fun for the entire family.
+                                Are you tired of the regular old routine? Why
+                                not take your family and friends out to the
+                                woods and have a good time in this log cabin
+                                right here. There are no ghosts in the cabin,
+                                don't worry!</p>
+                            </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+        <footer><p>Holberton School</p></footer>
+    </body>
+</html>

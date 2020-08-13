@@ -3,6 +3,7 @@
 
 import cmd
 import models
+from shlex import split
 from models.user import User
 from models.state import State
 from models.city import City
@@ -37,17 +38,23 @@ class HBNBCommand(cmd.Cmd):
         cmd.Cmd.do_help(self, args)
 
     def do_create(self, args):
-        """Creates a new instance of Basemodel,
-        saves it (to the JSON file) and prints the
-        id"""
-        if not args:
+        """Usage: create <class> <key 1>=<value 2> <key 2>=<value 2> ...
+        Create a new class instance with given keys/values and print its id."""
+        my_list = args.split()
+        if not my_list:
             print("** class name missing **")
-        elif args not in HBNBCommand.allowed_obj:
+        elif my_list[0] not in HBNBCommand.allowed_obj:
             print("** class doesn't exist **")
         else:
-            new_instance = eval(args + '()')
-            models.storage.save()
-            print(new_instance.id)
+            my_object = eval(my_list[0] + '()')
+
+            for i in range(1, len(my_list)):
+                res = my_list[i].split('=')
+                res[1] = res[1].replace('_', ' ')
+                setattr(my_object, res[0], res[1])
+
+            my_object.save()
+            print(my_object.id)
 
     def do_show(self, args):
         """Prints the string representation of an instance
@@ -132,6 +139,7 @@ class HBNBCommand(cmd.Cmd):
         '''empty line
         '''
         pass
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

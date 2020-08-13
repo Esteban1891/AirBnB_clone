@@ -56,6 +56,7 @@ class HBNBCommand(cmd.Cmd):
             my_object.save()
             print(my_object.id)
 
+
     def do_show(self, args):
         """Prints the string representation of an instance
         based on the class name and id"""
